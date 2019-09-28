@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='Android_Java_Bottom_Navigation_Movie_Database'
