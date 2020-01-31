@@ -48,6 +48,7 @@ public class NowPlayingFragment extends Fragment {
     ProgressBar pb;
     SwipeRefreshLayout sw;
 
+
     public NowPlayingFragment(Context context) {
         this.mainContext = context;
     }
@@ -105,25 +106,26 @@ public class NowPlayingFragment extends Fragment {
 
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.d("fgfgf: ", response.toString());
-                        String id, poster_path, title, release_date;
-                        nowPlayings = new ArrayList<>();
+                        Log.d("rendi: ", response.toString());
+                        String id, poster_path, title, release_date, overview;
+                                                       nowPlayings = new ArrayList<>();
 
-                        try {
-                            JSONArray jsonArray = response.getJSONArray("results");
-                            nowPlayings.clear();
+                                try {
+                                    JSONArray jsonArray = response.getJSONArray("results");
+                                    nowPlayings.clear();
 
-                            if (jsonArray.length() != 0) {
-                                for (int i = 0; i < jsonArray.length(); i++) {
-                                    JSONObject data = jsonArray.getJSONObject(i);
+                                    if (jsonArray.length() != 0) {
+                                        for (int i = 0; i < jsonArray.length(); i++) {
+                                            JSONObject data = jsonArray.getJSONObject(i);
 
-                                    id = data.getString("id").toString().trim();
-                                    poster_path = data.getString("poster_path").toString().trim();
-                                    title = data.getString("title").toString().trim();
-                                    release_date = data.getString("release_date").toString().trim();
+                                            id = data.getString("id").toString().trim();
+                                            poster_path = data.getString("poster_path").toString().trim();
+                                            title = data.getString("title").toString().trim();
+                                            release_date = data.getString("release_date").toString().trim();
+                                            overview = data.getString("overview").toString().trim();
 
-                                    nowPlayings.add(new NowPlaying(id, poster_path, title, release_date ));
-                                }
+                                            nowPlayings.add(new NowPlaying(id, poster_path, title, release_date, overview ));
+                                        }
 
                                 showRecyclerGrid();
                             }
