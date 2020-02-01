@@ -1,20 +1,15 @@
 package com.aurorasoft.android_java_bottom_navigation_movie_database;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextClock;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -22,13 +17,13 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
-class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.CardViewHolder> {
+class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.CardViewHolder> {
 
-    private List<NowPlaying> nowPlayings;
+    private List<Cari> caris;
     private Context context;
 
-    public NowPlayingAdapter(Context context, ArrayList<NowPlaying> nowPlayings) {
-        this.nowPlayings = nowPlayings;
+    public SearchAdapter(Context context, ArrayList<Cari> caris) {
+        this.caris = caris;
         this.context = context;
     }
 
@@ -45,10 +40,10 @@ class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.CardViewH
     @Override
     public void onBindViewHolder(@NonNull CardViewHolder holder, int position) {
         final String id, poster_path, title, release_date, overview;
-        id = nowPlayings.get(position).getId();
-        poster_path = nowPlayings.get(position).getPoster_path();
-        title = nowPlayings.get(position).getTitle();
-        overview = nowPlayings.get(position).getOverview();
+        id = caris.get(position).getId();
+        poster_path = caris.get(position).getPoster_path();
+        title = caris.get(position).getTitle();
+        overview = caris.get(position).getOverview();
 
         holder.tv.setText(title);
         Glide.with(context)
@@ -75,7 +70,7 @@ class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.CardViewH
 
     @Override
     public int getItemCount() {
-        return nowPlayings.size();
+        return caris.size();
     }
 
     public class CardViewHolder extends RecyclerView.ViewHolder {

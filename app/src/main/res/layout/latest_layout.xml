@@ -9,7 +9,7 @@
     android:background="#fff">
 
     <ImageView
-        android:id="@+id/img"
+        android:id="@+id/latest_img"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:scaleType="centerCrop"
@@ -20,6 +20,6 @@
         android:layout_height="wrap_content"
         android:text="MOVIE"
         android:textColor="#525252"
-        android:id="@+id/tv"/>
+        android:id="@+id/latest_tv"/>
 
 </LinearLayout>

@@ -1,7 +1,6 @@
 package com.aurorasoft.android_java_bottom_navigation_movie_database;
 
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -17,6 +16,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -37,34 +38,38 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LatestFragment extends Fragment {
-
+public class SearchFragment extends Fragment {
 
     View fragment_view;
     Context mainContext;
-    ArrayList<Latest> latests;
+    ArrayList<Cari> caris;
     RecyclerView rv;
     ProgressBar pb;
     SwipeRefreshLayout sw;
+    EditText etCari;
+    Button btCari;
+    RecyclerView rvCari;
 
-
-    public LatestFragment(Context context) {
+    public SearchFragment(Context context) {
         this.mainContext = context;
     }
 
-    @SuppressLint("ResourceAsColor")
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootview = inflater.inflate(R.layout.fragment_latest, container, false);
+        View rootview = inflater.inflate(R.layout.fragment_search, container, false);
         fragment_view = rootview;
-        pb = (ProgressBar) rootview.findViewById(R.id.pb_latest);
-        sw = (SwipeRefreshLayout) rootview.findViewById(R.id.sw_latest);
+        etCari = (EditText) rootview.findViewById(R.id.et_cari);
+        btCari = (Button) rootview.findViewById(R.id.bt_cari);
+        rvCari = (RecyclerView) rootview.findViewById(R.id.rv_cari);
+        pb = (ProgressBar) rootview.findViewById(R.id.pb_cari);
+        sw = (SwipeRefreshLayout) rootview.findViewById(R.id.sw_cari);
         sw.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                load();
+                load(etCari.getText().toString().trim());
 
                 //untuk delay saat menutup lingkaran sw
                 new Handler().postDelayed(new Runnable() {
@@ -73,28 +78,28 @@ public class LatestFragment extends Fragment {
                         sw.setRefreshing(false);
                     }
                 },1000);
-
             }
         });
-
-        //memberikan warna sw
         sw.setColorSchemeResources(
                 android.R.color.holo_green_light,
                 android.R.color.holo_blue_bright,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light
         );
-
-        load();
+        btCari.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                load(etCari.getText().toString().trim());
+            }
+        });
         return rootview;
     }
 
-    private void load() {
-
+    private void load(String cari){
         pb.setVisibility(ProgressBar.VISIBLE);
 
         RequestQueue queue = Volley.newRequestQueue(getContext());
-        String url = "https://api.themoviedb.org/3/movie/top_rated?api_key=2ece2095aa583fdd1c537b9287a10c11&language=en-US";
+        String url = "https://api.themoviedb.org/3/search/movie?api_key=2ece2095aa583fdd1c537b9287a10c11&language=en-US&query="+ cari+"&page=1&include_adult=false";
 
         //Log.i("get seafood ", "load: " + url);
         JsonObjectRequest jsObjRequest = new JsonObjectRequest(
@@ -105,13 +110,13 @@ public class LatestFragment extends Fragment {
 
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.d("fgfgf: ", response.toString());
+                        Log.d("rendi: ", response.toString());
                         String id, poster_path, title, release_date, overview;
-                        latests = new ArrayList<>();
+                        caris = new ArrayList<>();
 
                         try {
                             JSONArray jsonArray = response.getJSONArray("results");
-                            latests.clear();
+                            caris.clear();
 
                             if (jsonArray.length() != 0) {
                                 for (int i = 0; i < jsonArray.length(); i++) {
@@ -123,7 +128,7 @@ public class LatestFragment extends Fragment {
                                     release_date = data.getString("release_date").toString().trim();
                                     overview = data.getString("overview").toString().trim();
 
-                                    latests.add(new Latest(id, poster_path, title, release_date, overview ));
+                                    caris.add(new Cari(id, poster_path, title, release_date, overview ));
                                 }
 
                                 showRecyclerGrid();
@@ -149,8 +154,8 @@ public class LatestFragment extends Fragment {
         queue.add(jsObjRequest);
     }
 
-    private void showRecyclerGrid() {
-        RecyclerView recyclerView = (RecyclerView)fragment_view.findViewById(R.id.rv_latest);
+    private void showRecyclerGrid(){
+        RecyclerView recyclerView = (RecyclerView)fragment_view.findViewById(R.id.rv_cari);
         //recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         //agar bisa deteksi orientasi layar potrait atau landscape
 
@@ -159,8 +164,8 @@ public class LatestFragment extends Fragment {
         }else {
             recyclerView.setLayoutManager(new GridLayoutManager(mainContext, 4));
         }
-        LatestAdapter latestAdapter = new LatestAdapter(getContext(),latests);
-        recyclerView.setAdapter(latestAdapter);
+        SearchAdapter searchAdapter = new SearchAdapter(getContext(),caris);
+        recyclerView.setAdapter(searchAdapter);
     }
 
     @Override
@@ -168,5 +173,4 @@ public class LatestFragment extends Fragment {
         super.onAttach(context);
         mainContext = context;
     }
-
 }

@@ -11,7 +11,11 @@
         android:title="Coming soon"/>
     <item
         android:id="@+id/mn_latest"
-        android:icon="@drawable/ic_latest"
-        android:title="Latest"/>
+        android:icon="@drawable/ic_img_top"
+        android:title="Top Rated"/>
+    <item
+        android:id="@+id/mn_cari"
+        android:icon="@drawable/ic_img_search"
+        android:title="Search"/>
 
 </menu>

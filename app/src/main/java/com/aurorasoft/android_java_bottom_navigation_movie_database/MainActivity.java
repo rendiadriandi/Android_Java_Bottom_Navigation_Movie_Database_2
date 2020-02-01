@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -23,10 +24,13 @@ public class MainActivity extends AppCompatActivity {
                     fragment = new NowPlayingFragment(MainActivity.this);
                     break;
                 case R.id.mn_coming_soon:
-                    fragment = new ComingSoonFragment();
+                    fragment = new ComingSoonFragment(MainActivity.this);
                     break;
                 case R.id.mn_latest:
-                    fragment = new LatestFragment();
+                    fragment = new LatestFragment(MainActivity.this);
+                    break;
+                case R.id.mn_cari:
+                    fragment = new SearchFragment(MainActivity.this);
                     break;
             }
             return loadFragment(fragment);

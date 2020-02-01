@@ -1,10 +1,10 @@
 package com.aurorasoft.android_java_bottom_navigation_movie_database;
 
-public class NowPlaying {
+public class Latest {
 
     String id, poster_path, title, release_date, overview;
 
-    public NowPlaying(String id, String poster_path, String title, String release_date, String overview) {
+    public Latest(String id, String poster_path, String title, String release_date, String overview) {
         this.id = id;
         this.poster_path = poster_path;
         this.title = title;
@@ -28,7 +28,5 @@ public class NowPlaying {
         return release_date;
     }
 
-    public String getOverview() {
-        return overview;
-    }
+    public String getOverview(){return overview;}
 }
