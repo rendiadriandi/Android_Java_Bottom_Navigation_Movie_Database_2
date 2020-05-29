@@ -3,31 +3,31 @@
 3    package="com.aurorasoft.android_java_bottom_navigation_movie_database.test" >
 4
 5    <uses-sdk
-5-->D:\Rendi\Android\Android_Java_Bottom_Navigation_Movie_Database\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6960372740497526886.xml:5:5-74
+5-->D:\Github\Android_Java_Bottom_Navigation_Movie_Database_2\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1243750129345884552.xml:5:5-74
 6        android:minSdkVersion="21"
-6-->D:\Rendi\Android\Android_Java_Bottom_Navigation_Movie_Database\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6960372740497526886.xml:5:15-41
+6-->D:\Github\Android_Java_Bottom_Navigation_Movie_Database_2\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1243750129345884552.xml:5:15-41
 7        android:targetSdkVersion="29" />
-7-->D:\Rendi\Android\Android_Java_Bottom_Navigation_Movie_Database\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6960372740497526886.xml:5:42-71
+7-->D:\Github\Android_Java_Bottom_Navigation_Movie_Database_2\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1243750129345884552.xml:5:42-71
 8
 9    <instrumentation
-9-->D:\Rendi\Android\Android_Java_Bottom_Navigation_Movie_Database\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6960372740497526886.xml:11:5-15:110
+9-->D:\Github\Android_Java_Bottom_Navigation_Movie_Database_2\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1243750129345884552.xml:11:5-15:110
 10        android:name="androidx.test.runner.AndroidJUnitRunner"
-10-->D:\Rendi\Android\Android_Java_Bottom_Navigation_Movie_Database\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6960372740497526886.xml:11:22-76
+10-->D:\Github\Android_Java_Bottom_Navigation_Movie_Database_2\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1243750129345884552.xml:11:22-76
 11        android:functionalTest="false"
-11-->D:\Rendi\Android\Android_Java_Bottom_Navigation_Movie_Database\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6960372740497526886.xml:14:22-52
+11-->D:\Github\Android_Java_Bottom_Navigation_Movie_Database_2\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1243750129345884552.xml:14:22-52
 12        android:handleProfiling="false"
-12-->D:\Rendi\Android\Android_Java_Bottom_Navigation_Movie_Database\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6960372740497526886.xml:13:22-53
+12-->D:\Github\Android_Java_Bottom_Navigation_Movie_Database_2\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1243750129345884552.xml:13:22-53
 13        android:label="Tests for com.aurorasoft.android_java_bottom_navigation_movie_database"
-13-->D:\Rendi\Android\Android_Java_Bottom_Navigation_Movie_Database\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6960372740497526886.xml:15:22-108
+13-->D:\Github\Android_Java_Bottom_Navigation_Movie_Database_2\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1243750129345884552.xml:15:22-108
 14        android:targetPackage="com.aurorasoft.android_java_bottom_navigation_movie_database" />
-14-->D:\Rendi\Android\Android_Java_Bottom_Navigation_Movie_Database\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6960372740497526886.xml:12:22-106
+14-->D:\Github\Android_Java_Bottom_Navigation_Movie_Database_2\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1243750129345884552.xml:12:22-106
 15
 16    <application android:debuggable="true" >
-16-->D:\Rendi\Android\Android_Java_Bottom_Navigation_Movie_Database\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6960372740497526886.xml:7:5-9:19
-16-->D:\Rendi\Android\Android_Java_Bottom_Navigation_Movie_Database\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6960372740497526886.xml:7:18-43
+16-->D:\Github\Android_Java_Bottom_Navigation_Movie_Database_2\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1243750129345884552.xml:7:5-9:19
+16-->D:\Github\Android_Java_Bottom_Navigation_Movie_Database_2\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1243750129345884552.xml:7:18-43
 17        <uses-library android:name="android.test.runner" />
-17-->D:\Rendi\Android\Android_Java_Bottom_Navigation_Movie_Database\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6960372740497526886.xml:8:9-60
-17-->D:\Rendi\Android\Android_Java_Bottom_Navigation_Movie_Database\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6960372740497526886.xml:8:23-57
+17-->D:\Github\Android_Java_Bottom_Navigation_Movie_Database_2\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1243750129345884552.xml:8:9-60
+17-->D:\Github\Android_Java_Bottom_Navigation_Movie_Database_2\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1243750129345884552.xml:8:23-57
 18    </application>
 19
 20</manifest>
